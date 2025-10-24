@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>TUCK - {% block title %}Home{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <header class="header">
+        <nav class="navbar container">
+            <a href="/" class="logo">TUCK</a>
+
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/products">Products</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-icons">
+                <a href="#" aria-label="Search"><i class'bx bx-search'></i></a>
+                <a href="#" aria-label="User Account"><i class='bx bx-user'></i></a>
+                <a href="#" aria-label="Wishlist"><i class='bx bx-heart'></i></a>
+                <a href="#" aria-label="Cart"><i class='bx bx-shopping-bag'></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content container">
+        {% block content %}
+        {% endblock content %}
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container container">
+            
+            <div class="footer-column">
+                <h4>Contact & Service</h4>
+                <ul>
+                    <li>+1 123 456 7890</li>
+                    <li>info@tuck.com</li>
+                    <li>FAQs</li>
+                    <li>Returns</li>
+                    <li>Shipping</li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/products">Products</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/terms">Terms</a></li>
+                    <li><a href="/privacy">Privacy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Newsletter</h4>
+                <p>Sign up to our newsletter to stay informed</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+
+        </div>
+
+        <hr class="footer-divider">
+        <div class="footer-bottom container">
+            <p>© 2023 TUCK All rights reserved.</p>
+            <p>Designed by TUCK</p>
+        </div>
+    </footer>
+
+</body>
+</html>
