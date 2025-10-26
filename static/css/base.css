@@ -28,18 +28,22 @@ img {
     height: auto;
 }
 
-input, button {
+input,
+button {
     font-family: inherit;
 }
 
 /* Utility class for main content width */
 .container {
     width: 100%;
-    max-width: 1280px; /* You can adjust this */
+    max-width: 1280px;
+    /* You can adjust this */
     margin-left: auto;
     margin-right: auto;
-    padding-left: 40px;  /* Matches header/footer padding */
-    padding-right: 40px; /* Matches header/footer padding */
+    padding-left: 40px;
+    /* Matches header/footer padding */
+    padding-right: 40px;
+    /* Matches header/footer padding */
 }
 
 /* ==================== HEADER / NAVBAR ==================== */
@@ -53,9 +57,12 @@ input, button {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px; /* Fixed height for the navbar */
-    padding-left: 40px;  /* Use padding on container instead */
-    padding-right: 40px; /* Use padding on container instead */
+    height: 80px;
+    /* Fixed height for the navbar */
+    padding-left: 40px;
+    /* Use padding on container instead */
+    padding-right: 40px;
+    /* Use padding on container instead */
 }
 
 .logo {
@@ -66,7 +73,8 @@ input, button {
 
 .nav-links {
     display: flex;
-    gap: 32px; /* Space between "Home", "Products", etc. */
+    gap: 32px;
+    /* Space between "Home", "Products", etc. */
 }
 
 .nav-links a {
@@ -81,11 +89,13 @@ input, button {
 
 .nav-icons {
     display: flex;
-    gap: 24px; /* Space between icons */
+    gap: 24px;
+    /* Space between icons */
 }
 
 .nav-icons i {
-    font-size: 22px; /* Icon size */
+    font-size: 22px;
+    /* Icon size */
     color: #333;
     cursor: pointer;
     transition: color 0.3s ease;
@@ -117,13 +127,16 @@ input, button {
     display: flex;
     justify-content: space-between;
     gap: 40px;
-    flex-wrap: wrap; /* Allows columns to stack on small screens */
+    flex-wrap: wrap;
+    /* Allows columns to stack on small screens */
     margin-bottom: 40px;
 }
 
 .footer-column {
-    flex: 1; /* Each column tries to take equal space */
-    min-width: 220px; /* Prevents columns from getting too squished */
+    flex: 1;
+    /* Each column tries to take equal space */
+    min-width: 220px;
+    /* Prevents columns from getting too squished */
 }
 
 .footer-column h4 {
@@ -198,6 +211,8 @@ input, button {
     justify-content: space-between;
     font-size: 13px;
     color: #aaa;
-    padding-left: 40px;  /* Use padding on container instead */
-    padding-right: 40px; /* Use padding on container instead */
+    padding-left: 40px;
+    /* Use padding on container instead */
+    padding-right: 40px;
+    /* Use padding on container instead */
 }

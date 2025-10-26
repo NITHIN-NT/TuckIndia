@@ -10,5 +10,5 @@ class ProductAdminView(admin.ModelAdmin):
 admin.site.register(Product,ProductAdminView,inlines=[ProductImageInline])
 
 class ProductImageAdminView(admin.ModelAdmin):
-    list_display = ['product','image']
+    list_display = ['product','image_url']
 admin.site.register(ProductImage,ProductImageAdminView)
