@@ -33,7 +33,7 @@ INSTALLED_APPS = [
 
     'dynamic_breadcrumbs',
     
-    'userFolder.userAuth',
+    'userFolder.userprofile',
     'userFolder.products'
 ]
 
