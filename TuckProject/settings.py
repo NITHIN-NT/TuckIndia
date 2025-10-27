@@ -34,7 +34,7 @@ INSTALLED_APPS = [
     'dynamic_breadcrumbs',
     
     'userFolder.userprofile',
-    'userFolder.products'
+    'userFolder.products',
 ]
 
 MIDDLEWARE = [
