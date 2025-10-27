@@ -35,7 +35,7 @@ INSTALLED_APPS = [
 
 
     # Apps User
-    'userFolder.userAuth',
+    'userFolder.userprofile',
     'userFolder.products'
 ]
 
