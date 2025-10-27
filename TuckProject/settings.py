@@ -2,6 +2,10 @@ from pathlib import Path
 import os
 import environ
 
+#============================checkpoint========================
+    # BackUp - 1 Homepage / breadcrums / Product listing / Product Category
+#============================checkpoint========================
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
