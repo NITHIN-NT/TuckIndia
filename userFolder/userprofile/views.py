@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
-class ProfileView(LoginRequiredMixin,TemplateView):
+class ProfileView(TemplateView):
     template_name = 'userprofile/profile.html'
     model = get_user_model()
 
