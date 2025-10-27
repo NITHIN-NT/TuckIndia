@@ -40,10 +40,14 @@
 .filter-list {
     display: flex;
     flex-direction: column;
-    gap: 16px; /* Increased from 12px for more space */
-    list-style-type: none; /* Remove default list bullets */
-    padding-left: 0; /* Remove default list padding */
-    margin: 0; /* Remove default list margin */
+    gap: 16px;
+    /* Increased from 12px for more space */
+    list-style-type: none;
+    /* Remove default list bullets */
+    padding-left: 0;
+    /* Remove default list padding */
+    margin: 0;
+    /* Remove default list margin */
 }
 
 .filter-list li {
@@ -64,18 +68,19 @@
     -webkit-appearance: none;
     appearance: none;
     margin: 0;
-    
+
     /* Custom radio styles */
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    border: 2px solid #adb5bd; /* Grey border for unselected */
+    border: 2px solid #adb5bd;
+    /* Grey border for unselected */
     cursor: pointer;
-    
+
     /* For centering the inner dot */
     display: grid;
     place-content: center;
-    
+
     /* Smooth transition for border color */
     transition: border-color 0.2s ease;
 }
@@ -83,11 +88,13 @@
 /* Inner dot */
 .filter-list input[type="radio"]::before {
     content: "";
-    width: 10px; /* Size of the inner dot */
+    width: 10px;
+    /* Size of the inner dot */
     height: 10px;
     border-radius: 50%;
-    background-color: #007bff; /* Blue color for the dot */
-    
+    background-color: #007bff;
+    /* Blue color for the dot */
+
     /* Hide dot by default */
     transform: scale(0);
     transition: transform 0.2s ease;
@@ -95,7 +102,8 @@
 
 /* Checked state */
 .filter-list input[type="radio"]:checked {
-    border-color: #007bff; /* Blue border when selected */
+    border-color: #007bff;
+    /* Blue border when selected */
 }
 
 /* Show inner dot when checked */
@@ -108,6 +116,7 @@
     outline: 2px solid #007bff;
     outline-offset: 2px;
 }
+
 /* ============================================== */
 
 
@@ -282,4 +291,27 @@
     cursor: default;
 }
 
+.products-sidebar .filter-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
+.products-sidebar .filter-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* space between radio and label */
+    margin-bottom: 10px;
+    /* vertical space between each item */
+    line-height: 1.2;
+}
+
+.products-sidebar .filter-list input[type="radio"] {
+    margin: 0;
+    flex: 0 0 auto;
+}
+
+.products-sidebar .filter-list label {
+    margin: 0;
+}
