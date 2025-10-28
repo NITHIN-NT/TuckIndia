@@ -15,7 +15,7 @@
             <img src="{{product.image}}" alt="Premium Formal Shirt" id="main-product-image">
         </div>
         <div class="gallery-thumbnails">
-            {% for image in images %}
+            {% for image in images_list_limited %}
             <img src="{{image.image_url}}" alt="Thumbnail 1" class="thumbnail-img" data-image="{{image.image_url}}">
             {% endfor %}
         </div> 
@@ -33,15 +33,11 @@
              <div class="option-group">
                 <div class="option-header">
                     <span><strong>Size:</strong></span>
-                    <span id="selected-size">S</span>
                 </div>
                 <div class="option-buttons size-buttons">
-                    <button class="btn-size" data-size="XS">XS</button>
-                    <button class="btn-size active" data-size="S">S</button>
-                    <button class="btn-size" data-size="M">M</button>
-                    <button class="btn-size" data-size="L">L</button>
-                    <button class="btn-size" data-size="XL">XL</button>
-                    <button class="btn-size" data-size="XXL">XXL</button>
+                    {% for size in sizes %}
+                    <button class="btn-size" data-size="size">{{size}}</button>
+                    {% endfor %}
                 </div>
             </div>
 
@@ -58,7 +54,7 @@
                 </div>
             </div> {% endcomment %}
 
-            
+
             <div class="option-group">
                 <label for="quantity-display" class="quantity-label"><strong>Quantity</strong></label>
                 <div class="quantity-selector">

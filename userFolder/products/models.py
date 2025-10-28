@@ -16,6 +16,7 @@ class Product(models.Model):
     image = models.URLField(max_length=1024)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='products')
     stock = models.PositiveIntegerField(default=99)
+    size = models.ManyToManyField("Size",null=True,blank=True,related_name='sizes')
     created_at = models.DateTimeField(auto_now_add=True) 
 
     is_featured = models.BooleanField(default=False)
@@ -31,5 +32,10 @@ class ProductImage(models.Model):
 
     def __str__(self):
         return f"Image for {self.product.name}"
-    
+
+class Size(models.Model):
+    size = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.size
 

@@ -103,11 +103,18 @@ class ProductDetailedView(DetailView):
         model = Product
         template_name = 'products/product_detail.html'
         context_object_name = 'product'
-        slug_field = 'slug'
+        slug_field = 'slug' # Product.objects.get(slug='nike-shoes')
         slug_url_kwarg = 'slug'
 
-        def get_context_data(self, **kwargs):
-            context = super().get_context_data(**kwargs)
-            context["images"] = ProductImage.objects.filter(product=self.object)[:4]
-            return context
+        def get_queryset(self):
+            query_set =  super().get_queryset() # This get the queryset or the product details
+            return query_set.prefetch_related('images','size') # Take related Items of that products like images and size from their respective tables
         
+        
+        def get_context_data(self, **kwargs): # This method is used when you want to add more data to send to the template.
+            context = super().get_context_data(**kwargs)
+            all_images = self.object.images.all() # In this we are taking the related_name, images from productimage table
+            context["images_list_limited"] = all_images[:4] # In here we are limiting the images we are sending
+            context["sizes"] = self.object.size.all() # in here the size is the field name .
+            
+            return context
