@@ -4,7 +4,7 @@
 {% block title %}Create Account{% endblock %}
 
 {% block extra_styles %}
-    <link rel="stylesheet" href="{% static 'css/account/signup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/accounts/signup.css' %}">
 {% endblock extra_styles %}
 
 {% block content %}
@@ -18,31 +18,31 @@
         <div class="form-row">
             <div class="form-group">
                 <label for="first_name">First name</label>
-                <input type="text" id="first_name" name="first_name">
+                <input type="text" id="first_name" name="first_name" required>
             </div>
             <div class="form-group">
                 <label for="last_name">Last name</label>
-                <input type="text" id="last_name" name="last_name">
+                <input type="text" id="last_name" name="last_name" required>
             </div>
         </div>
 
         <div class="form-group">
             <label for="email">Email address</label>
-            <input type="email" id="email" name="email">
+            <input type="email" id="email" name="email" required>
         </div>
 
         <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" id="password" name="password">
+            <input type="password" id="password" name="password" required>
         </div>
 
         <div class="form-group">
             <label for="confirm_password">Confirm password</label>
-            <input type="password" id="confirm_password" name="confirm_password">
+            <input type="password" id="confirm_password" name="confirm_password" required>
         </div>
 
         <div class="form-group-checkbox">
-            <input type="checkbox" id="terms" name="terms">
+            <input type="checkbox" id="terms" name="terms" required>
             <label for="terms">I agree to the Terms and Conditions</label>
         </div>
         
@@ -50,7 +50,7 @@
     </form>
 
     <p class="signin-link">
-        Already have an account? <a href="{% url 'account_login' %}">Sign in</a>
+        Already have an account? <a href="{% url "UserLoginPage" %}">Sign in</a>
     </p>
 </div>
 {% endblock content %}

@@ -10,7 +10,11 @@
     <link rel="stylesheet" href="{% static 'css/breadcrumbs.css' %}">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% block extra_styles %}{% endblock extra_styles %}
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    
 </head>
 <body>
 
@@ -89,4 +93,42 @@
 
 </body>
 {% block extra_script %}{% endblock extra_script %}
+ <script>
+        // Set toastr options (optional)
+        toastr.options = {
+            "closeButton": true,
+            "progressBar": true,
+            "positionClass": "toast-top-right",
+        };
+    
+        // 4. Loop through the Django messages and show them
+        {% if messages %}
+            {% for message in messages %}
+                // Use the message 'tags' to determine the toast type
+                // (e.g., 'success', 'error', 'warning', 'info')
+                
+                var toastType = '{{ message.tags }}';
+                var messageText = '{{ message|safe }}'; // '|safe' is important if your messages have HTML
+
+                switch (toastType) {
+                    case 'success':
+                        toastr.success(messageText);
+                        break;
+                    case 'error':
+                        toastr.error(messageText);
+                        break;
+                    case 'warning':
+                        toastr.warning(messageText);
+                        break;
+                    case 'info':
+                        toastr.info(messageText);
+                        break;
+                    default:
+                        // Default to 'info' if tag is something else
+                        toastr.info(messageText);
+                        break;
+                }
+            {% endfor %}
+        {% endif %}
+    </script>
 </html>
