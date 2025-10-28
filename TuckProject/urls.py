@@ -5,4 +5,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('userFolder.products.urls')),
     path('profile/',include('userFolder.userprofile.urls')),
+    path('auth/',include('userFolder.accounts.urls'))
 ]

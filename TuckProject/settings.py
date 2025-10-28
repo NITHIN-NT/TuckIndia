@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'dynamic_breadcrumbs',
     
     'userFolder.userprofile',
-    'userFolder.products'
+    'userFolder.products',
+    'userFolder.accounts'
 ]
 
 MIDDLEWARE = [
@@ -53,6 +54,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'TuckProject.urls'
 
+AUTH_USER_MODEL = 'accounts.CustomUser'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
